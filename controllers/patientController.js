@@ -15,3 +15,10 @@ exports.enterPatient = catchAsync(async (req, res, next) => {
 
     createResponse(patient, 200, res)
 })
+
+exports.getPatient = catchAsync(async (req, res, next) => {
+    const { email } = req.body
+    const patient = await Patient.findOne({email});
+
+    createResponse(patient, 200, res)
+})
