@@ -7,5 +7,6 @@ const router = express.Router();
 router.post('/signUp', technicianController.signUp);
 router.post('/logIn', technicianController.logIn);
 router.post('/getPatient', patientController.getPatient)
+router.post('/postTest', patientController.postTest)
 
 module.exports = router;

@@ -15,6 +15,15 @@ const patientSchema = new mongoose.Schema({
     },
     summary: {
         type: String,
+    },
+    pH:{
+        type: Number
+    },
+    pCO2: {
+        type: Number
+    },
+    HCO3: {
+        type: Number
     }
 })
 
