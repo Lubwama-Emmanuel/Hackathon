@@ -20,5 +20,5 @@ app.use("/api/v1/patients", patientRouter)
 
 
 // Error middleware
-// app.use(errorHandler)
+app.use(errorHandler)
 module.exports = app;

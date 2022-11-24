@@ -23,7 +23,7 @@ const createSignToken = (technician, statusCode, res) => {
 
 exports.signUp = catchAsync(async (req, res, next) => {
   const newtechnician = await Technician.create(req.body);
-  await new Email(newtechnician, "http://www.me").sendWelcome()
+  // await new Email(newtechnician, "http://www.me").sendWelcome()
 
   createSignToken(newtechnician, 200, res);
 });
