@@ -5,9 +5,14 @@ const { htmlToText } = require("html-to-text");
 module.exports = class Email {
   constructor(user, url) {
     this.to = user.email;
-    this.firstName = user.name;
+    this.firstName = user.name.split(' ')[0];
+    this.summary = user.summary;
+    this.result = user.result;
+    this.ag = user.ag;
+    this.agStatus = user.agStatus;
     this.url = url;
     this.from = `<Welcome to the ZUKTI 1.0 App>`;
+    console.log("From Email:", this.firstName)
   }
 
   newTransport() {
@@ -48,5 +53,8 @@ module.exports = class Email {
 
   async sendWelcome() {
     await this.send("welcome", "Welcome to the ZUKTI 1.0 App!");
+  }
+  async sendReport() {
+    await this.send("report", "Summary of report from ZUKTI!");
   }
 };

@@ -1,0 +1,19 @@
+extends baseEmail
+block content
+    p Hello #{firstName},
+    p Here is a copy of report from the ABG test.
+    p Summary: #{summary}
+    P ABG result: #{result}
+    p Anion gap result: #{agStatus}
+    p Thank you so much
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='left')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}`, target='_blank') Continue to app
+    p Incase you find any difficulties in using the application please feel free to contact our support team at zukti10@gmail.com
+    
